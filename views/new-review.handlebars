@@ -1,0 +1,25 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-push-3 col-md-6'>
+            <form class='newReviewForm' method='POST' action='/'>
+                <div style='margin-top: 4em;' class="form-group">
+                    <!-- title -->
+                    <div class='input-field'>
+                        <label for="reviewTitleInput">Strain</label>
+                        <input type="text" name='title' value='{{review.title}}' class="form-control" id="reviewTitleInput" aria-describedby="title" placeholder="Sour OG">
+                    </div>
+                    <!-- text -->
+                    <div class='input-field'>
+                        <small id="reviewInputSubtext" class="form-text text-muted">Name of the strain you're reviewing...</small>
+                        <label style='margin-top: 2em;' for="text">Review strain:</label>
+                        <textarea value='{{review.text}}' name='text' class="form-control" id="text" rows="3"></textarea>
+                    </div>
+                    <!-- submit -->
+                    <div style='margin-top: 2em;'>
+                        <button class="btn-flat" type="submit">Add Review</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
