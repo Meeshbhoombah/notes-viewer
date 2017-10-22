@@ -1,0 +1,38 @@
+{
+  "name": "render",
+  "version": "0.0.0",
+  "description": "A web app that stores the strains I've smoked and a tiny review of them",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meeshbhoombah/render.git"
+  },
+  "keywords": [
+    "node",
+    "handlebars",
+    "express",
+    "mongoose",
+    "mongodb",
+    "markdown"
+  ],
+  "author": "Rohan Mishra (@meeshbhoombah)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Meeshbhoombah/render/issues"
+  },
+  "homepage": "https://github.com/Meeshbhoombah/render#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "showdown": "^1.7.6"
+  }
+}
