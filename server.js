@@ -63,6 +63,38 @@ app.get('/review/new', function(req, res) {
     res.render('new-review', {});
 });
 
+app.post('/review/edit', function(req, res) {
+    console.log(req.body.id);
+    
+    Review.findById(req.body.id, function(err, review) {
+        res.render('edit-review', {title: review.title, text: review.text, idToUpdate: req.body.id});
+    });
+});
+
+app.post('/review/update', function(req, res) {
+    Review.findById(req.body.id, function(err, review) {
+        Review.findOne({ _id: req.body.id }, function (err, review) {
+            console.log(review);
+
+            review.text = req.body.text;
+            review.title = req.body.title;
+            review.save();
+
+            console.log(review);
+        });
+
+        console.log(review);
+    });
+
+    res.load('/');
+});
+
+app.post('/review/delete', function(req, res) {
+    Review.findByIdAndRemove(req.body.id, function(err) {
+        res.redirect('/');
+    });
+});
+
 // server start on 'port'
 app.listen(app.get('port'), function () {
     console.log("Listening on port " + app.get('port'));

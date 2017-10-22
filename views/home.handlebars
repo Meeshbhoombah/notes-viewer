@@ -15,10 +15,16 @@
 <div class='container-fluid'>
     <div class='row'>
         <div class='col-md-push-4 col-md-4'>
-            <h2>{{title}}</h2>
-            <p>{{text}}</p>
-            <button class='btn btn-primary' type='button'>Edit</button>
-            <button class='btn btn-danger' type='button'>Delete</button>
+            <h2 style='color: #ffffff;'>{{title}}</h2>
+            <p style='color: #ffffff;'>{{text}}</p>
+            <form class='editReview' method='POST' action='/review/edit'>
+                <input type="hidden" name="id" value='{{_id}}'>
+                <button class='btn btn-danger' type='submit'>EDIT</button>
+            </form>
+            <form class='editReview' method='POST' action='/review/delete'>
+                <input type="hidden" name="id" value='{{_id}}'>
+                <button class='btn btn-danger' type='submit'>DELETE</button>
+            </form> 
         </div>
     </div>
 </div>
