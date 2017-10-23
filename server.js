@@ -23,7 +23,7 @@ mongoose.connect(connection, {
 var Review =  require('./models/review');
 
 // configure app
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.engine('handlebars', exphb({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
