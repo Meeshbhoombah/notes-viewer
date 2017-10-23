@@ -2,7 +2,7 @@
  *
  * server.js
  * import dependencies
- * handles routing and models 
+ * handles routing and models
  *
  */
 
@@ -15,7 +15,7 @@ const express       = require('express'),
 const app           = express();
 
 // connection to database
-const connection = 'mongodb://127.0.0.1/strainsTesting';
+const connection = process.env.MONGODB_URI || 'mongodb://127.0.0.1/strainsTesting';
 mongoose.connect(connection, {
     useMongoClient: true
 })
@@ -36,7 +36,7 @@ app.get('/', function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render('home', { review: reviews });         
+            res.render('home', { review: reviews });
         }
     });
 });
@@ -65,7 +65,7 @@ app.get('/review/new', function(req, res) {
 
 app.post('/review/edit', function(req, res) {
     console.log(req.body.id);
-    
+
     Review.findById(req.body.id, function(err, review) {
         res.render('edit-review', {title: review.title, text: review.text, idToUpdate: req.body.id});
     });
@@ -98,5 +98,4 @@ app.post('/review/delete', function(req, res) {
 // server start on 'port'
 app.listen(process.env.PORT || 3000, function () {
     console.log("Listening on port " + app.get('port'));
-}); 
-
+});
