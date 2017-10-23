@@ -96,7 +96,7 @@ app.post('/review/delete', function(req, res) {
 });
 
 // server start on 'port'
-app.listen(app.get('port'), function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("Listening on port " + app.get('port'));
 }); 
 
