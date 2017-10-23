@@ -86,7 +86,7 @@ app.post('/review/update', function(req, res) {
         console.log(review);
     });
 
-    res.load('/');
+    res.redirect('/');
 });
 
 app.post('/review/delete', function(req, res) {
